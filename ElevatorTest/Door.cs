@@ -49,13 +49,23 @@ namespace ElevatorTest
             }
         }
 
-        private async void OpenCloseDoor()
+        public void OpenCloseDoor()
         {
-            openDoor.Start();
+            Thread.Sleep(1500);
 
-            await Task.Delay(2000);
+            if (InvokeRequired)
+            {
+                Invoke(new Action(openDoor.Start)); // UI 스레드에서 실행
+            }
 
-            closeDoor.Start();
+            Thread.Sleep(1500);
+
+            if (InvokeRequired)
+            {
+                Invoke(new Action(closeDoor.Start)); // UI 스레드에서 실행
+            }
+
+            Thread.Sleep(1500);
         }
     }
 }

@@ -41,6 +41,7 @@ namespace ElevatorTest
             btnInside2 = new Button();
             btnInside6 = new Button();
             btnInside1 = new Button();
+            label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,7 +64,7 @@ namespace ElevatorTest
             tableLayoutPanel1.Controls.Add(btnInside2, 0, 1);
             tableLayoutPanel1.Controls.Add(btnInside6, 1, 0);
             tableLayoutPanel1.Controls.Add(btnInside1, 0, 0);
-            tableLayoutPanel1.Location = new Point(32, 40);
+            tableLayoutPanel1.Location = new Point(31, 57);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -89,6 +90,7 @@ namespace ElevatorTest
             btnInside10.TabIndex = 9;
             btnInside10.Text = "10";
             btnInside10.UseVisualStyleBackColor = false;
+            btnInside10.Click += btnInside_Click;
             // 
             // btnInside5
             // 
@@ -105,6 +107,7 @@ namespace ElevatorTest
             btnInside5.TabIndex = 8;
             btnInside5.Text = "5";
             btnInside5.UseVisualStyleBackColor = false;
+            btnInside5.Click += btnInside_Click;
             // 
             // btnInside9
             // 
@@ -121,6 +124,7 @@ namespace ElevatorTest
             btnInside9.TabIndex = 7;
             btnInside9.Text = "9";
             btnInside9.UseVisualStyleBackColor = false;
+            btnInside9.Click += btnInside_Click;
             // 
             // btnInside4
             // 
@@ -137,6 +141,7 @@ namespace ElevatorTest
             btnInside4.TabIndex = 6;
             btnInside4.Text = "4";
             btnInside4.UseVisualStyleBackColor = false;
+            btnInside4.Click += btnInside_Click;
             // 
             // btnInside8
             // 
@@ -153,6 +158,7 @@ namespace ElevatorTest
             btnInside8.TabIndex = 5;
             btnInside8.Text = "8";
             btnInside8.UseVisualStyleBackColor = false;
+            btnInside8.Click += btnInside_Click;
             // 
             // btnInside3
             // 
@@ -169,6 +175,7 @@ namespace ElevatorTest
             btnInside3.TabIndex = 4;
             btnInside3.Text = "3";
             btnInside3.UseVisualStyleBackColor = false;
+            btnInside3.Click += btnInside_Click;
             // 
             // btnInside7
             // 
@@ -185,6 +192,7 @@ namespace ElevatorTest
             btnInside7.TabIndex = 3;
             btnInside7.Text = "7";
             btnInside7.UseVisualStyleBackColor = false;
+            btnInside7.Click += btnInside_Click;
             // 
             // btnInside2
             // 
@@ -201,6 +209,7 @@ namespace ElevatorTest
             btnInside2.TabIndex = 2;
             btnInside2.Text = "2";
             btnInside2.UseVisualStyleBackColor = false;
+            btnInside2.Click += btnInside_Click;
             // 
             // btnInside6
             // 
@@ -217,6 +226,7 @@ namespace ElevatorTest
             btnInside6.TabIndex = 1;
             btnInside6.Text = "6";
             btnInside6.UseVisualStyleBackColor = false;
+            btnInside6.Click += btnInside_Click;
             // 
             // btnInside1
             // 
@@ -233,18 +243,31 @@ namespace ElevatorTest
             btnInside1.TabIndex = 0;
             btnInside1.Text = "1";
             btnInside1.UseVisualStyleBackColor = false;
+            btnInside1.Click += btnInside_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label1.Location = new Point(106, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 25);
+            label1.TabIndex = 1;
+            label1.Text = "내부";
             // 
             // inside
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(276, 386);
+            Controls.Add(label1);
             Controls.Add(tableLayoutPanel1);
             Name = "inside";
             StartPosition = FormStartPosition.Manual;
             Text = "inside";
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -260,5 +283,6 @@ namespace ElevatorTest
         private Button btnInside7;
         private Button btnInside2;
         private Button btnInside6;
+        private Label label1;
     }
 }

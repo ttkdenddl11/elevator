@@ -13,6 +13,9 @@ namespace ElevatorTest
 {
     public partial class inside : Form
     {
+        //public delegate void delFloorChange();
+        //public event delFloorChange eventDelFloorChange;
+        public event EventHandler eventDelbtnInsideClicked;
         public inside()
         {
             InitializeComponent();
@@ -46,5 +49,11 @@ namespace ElevatorTest
                 }
             }
         }
+
+        private void btnInside_Click(object sender, EventArgs e)
+        {
+            eventDelbtnInsideClicked(sender, e);
+        }
+
     }
 }
