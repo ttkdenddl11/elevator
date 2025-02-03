@@ -30,7 +30,6 @@
         {
             pnLeftDoor = new Panel();
             pnRightDoor = new Panel();
-            button1 = new Button();
             lblFloor = new Label();
             SuspendLayout();
             // 
@@ -50,16 +49,6 @@
             pnRightDoor.Size = new Size(115, 205);
             pnRightDoor.TabIndex = 1;
             // 
-            // button1
-            // 
-            button1.Location = new Point(185, 328);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // lblFloor
             // 
             lblFloor.BackColor = Color.Black;
@@ -78,7 +67,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(453, 386);
             Controls.Add(lblFloor);
-            Controls.Add(button1);
             Controls.Add(pnRightDoor);
             Controls.Add(pnLeftDoor);
             Name = "Form1";
@@ -91,7 +79,6 @@
 
         private Panel pnLeftDoor;
         private Panel pnRightDoor;
-        private Button button1;
         private Label lblFloor;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -302,46 +303,77 @@ namespace ElevatorTest
         public void setCallList(int btnFloor)
         {
             Monitor.Enter(lockObject);
-            // 내부에서 누른 층 수가 이미 눌러져 있지 않은 경우에만
-            if (callList.Contains(btnFloor) == false)
+
+            // 현재 층이 누른 층보다 낮다면
+            if (currentFloor < btnFloor)
             {
-                // 현재 층이 누른 층보다 낮다면
-                if(currentFloor < btnFloor)
-                {
+                if (callList.Contains(btnFloor) == false)
                     callList.Add(btnFloor);
-                    // 누른 층 버튼 색깔 바꿀거면 여기서 델리게이트 호출
+                // 누른 층 버튼 색깔 바꿀거면 여기서 델리게이트 호출
 
-                    callInfos[btnFloor].upCall = true;
+                callInfos[btnFloor].upCall = true;
 
-                    if(currentState == ElevatorState.STOP)
-                    {
-                        currentState = ElevatorState.UP;
-                    }
-                }
-                // 현재 층이 누른 층보다 높다면
-                else if(currentFloor > btnFloor)
+                if (currentState == ElevatorState.STOP)
                 {
-                    callList.Add(btnFloor);
-                    // 누른 층 버튼 색깔 바꿀거면 여기서 델리게이트 호출
-
-                    callInfos[btnFloor].downCall = true;
-
-                    if (currentState == ElevatorState.STOP)
-                    {
-                        currentState = ElevatorState.DOWN;
-                    }
-                }
-                // 현재 층이 누른 층과 같다면
-                else
-                {
-                    // 일단 무시
+                    currentState = ElevatorState.UP;
                 }
             }
-            // 내부에서 해당 버튼이 눌러져 있을 경우엔 제거(향후 개발)
+            // 현재 층이 누른 층보다 높다면
+            else if (currentFloor > btnFloor)
+            {
+                if (callList.Contains(btnFloor) == false)
+                    callList.Add(btnFloor);
+                // 누른 층 버튼 색깔 바꿀거면 여기서 델리게이트 호출
+
+                callInfos[btnFloor].downCall = true;
+
+                if (currentState == ElevatorState.STOP)
+                {
+                    currentState = ElevatorState.DOWN;
+                }
+            }
+            // 현재 층이 누른 층과 같다면
             else
             {
-
+                // 일단 무시
             }
+
+            Monitor.Exit(lockObject);
+        }
+
+        // 엘리베이터 내부 버튼 눌렀을 때 동작 함수
+        public void setCallList(int btnFloor, bool up, bool down)
+        {
+            Monitor.Enter(lockObject);
+            // 현재 층이 누른 층보다 낮다면
+
+            if (callList.Contains(btnFloor) == false)
+                callList.Add(btnFloor);
+            // 누른 층 버튼 색깔 바꿀거면 여기서 델리게이트 호출
+
+            if (up)
+                callInfos[btnFloor].upCall = up;
+            if (down)
+                callInfos[btnFloor].downCall = down;
+
+
+            if (currentState == ElevatorState.STOP && currentFloor < btnFloor)
+            {
+                currentState = ElevatorState.UP;
+            }
+
+            if (currentState == ElevatorState.STOP && currentFloor > btnFloor)
+            {
+                currentState = ElevatorState.DOWN;
+            }
+
+            if (currentState == ElevatorState.STOP && currentFloor == btnFloor)
+            {
+                Task.Run(() => eventDelElevatorDoor());
+                //eventDelElevatorDoor();
+            }
+
+
             Monitor.Exit(lockObject);
         }
     }

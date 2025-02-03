@@ -37,10 +37,19 @@ namespace ElevatorTest
             elevator1.setCallList(btnFloor);
         }
 
+        // 내부에서 누른 버튼 받아와서 세팅 값으로 전달해주기 위한 컨트롤 함수
+        public void TransBtnOutside(int btnFloor, bool up, bool down)
+        {
+            elevator1.setCallList(btnFloor, up, down);
+        }
+
+        // 문 여는 함수를 부르기 위한 델리게이트 이벤트
         public void Elevator1_eventDelElevatorDoor()
         {
             evendDelElevatorDoor();
         }
+
+        // 엘리베이터 층수 텍스트를 바꾸기 위한 델리게이트 이벤트
         public void Elevator1_eventDelElevatorFloorText(int FloorNum)
         {
             evendDelElevatorFloorText(FloorNum);

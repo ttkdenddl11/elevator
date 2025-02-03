@@ -12,9 +12,15 @@ namespace ElevatorTest
 {
     public partial class outside : Form
     {
+        public event EventHandler eventDelbtnOutsideClicked;
         public outside()
         {
             InitializeComponent();
+        }
+
+        private void btnOutside_Click(object sender, EventArgs e)
+        {
+            eventDelbtnOutsideClicked(sender, e);
         }
     }
 }

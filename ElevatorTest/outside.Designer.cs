@@ -30,7 +30,6 @@
         {
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            btnOutside_1_DOWN = new Button();
             btnOutside_1_UP = new Button();
             label2 = new Label();
             label3 = new Label();
@@ -68,7 +67,6 @@
             btnOutside_9_UP = new Button();
             tableLayoutPanel10 = new TableLayoutPanel();
             btnOutside_10_DOWN = new Button();
-            btnOutside_10_UP = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
@@ -95,9 +93,8 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(btnOutside_1_DOWN, 0, 1);
             tableLayoutPanel1.Controls.Add(btnOutside_1_UP, 0, 0);
-            tableLayoutPanel1.Location = new Point(38, 64);
+            tableLayoutPanel1.Location = new Point(38, 88);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -105,20 +102,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(57, 97);
             tableLayoutPanel1.TabIndex = 3;
-            // 
-            // btnOutside_1_DOWN
-            // 
-            btnOutside_1_DOWN.BackColor = Color.LightGray;
-            btnOutside_1_DOWN.Dock = DockStyle.Fill;
-            btnOutside_1_DOWN.FlatAppearance.BorderColor = Color.DarkGray;
-            btnOutside_1_DOWN.FlatStyle = FlatStyle.Flat;
-            btnOutside_1_DOWN.Location = new Point(10, 51);
-            btnOutside_1_DOWN.Margin = new Padding(10, 3, 10, 10);
-            btnOutside_1_DOWN.Name = "btnOutside_1_DOWN";
-            btnOutside_1_DOWN.Size = new Size(37, 36);
-            btnOutside_1_DOWN.TabIndex = 1;
-            btnOutside_1_DOWN.Text = "▼";
-            btnOutside_1_DOWN.UseVisualStyleBackColor = false;
             // 
             // btnOutside_1_UP
             // 
@@ -133,6 +116,7 @@
             btnOutside_1_UP.TabIndex = 0;
             btnOutside_1_UP.Text = "▲";
             btnOutside_1_UP.UseVisualStyleBackColor = false;
+            btnOutside_1_UP.Click += btnOutside_Click;
             // 
             // label2
             // 
@@ -262,6 +246,7 @@
             btnOutside_2_DOWN.TabIndex = 1;
             btnOutside_2_DOWN.Text = "▼";
             btnOutside_2_DOWN.UseVisualStyleBackColor = false;
+            btnOutside_2_DOWN.Click += btnOutside_Click;
             // 
             // btnOutside_2_UP
             // 
@@ -276,6 +261,7 @@
             btnOutside_2_UP.TabIndex = 0;
             btnOutside_2_UP.Text = "▲";
             btnOutside_2_UP.UseVisualStyleBackColor = false;
+            btnOutside_2_UP.Click += btnOutside_Click;
             // 
             // tableLayoutPanel5
             // 
@@ -305,6 +291,7 @@
             btnOutside_3_DOWN.TabIndex = 1;
             btnOutside_3_DOWN.Text = "▼";
             btnOutside_3_DOWN.UseVisualStyleBackColor = false;
+            btnOutside_3_DOWN.Click += btnOutside_Click;
             // 
             // btnOutside_3_UP
             // 
@@ -319,6 +306,7 @@
             btnOutside_3_UP.TabIndex = 0;
             btnOutside_3_UP.Text = "▲";
             btnOutside_3_UP.UseVisualStyleBackColor = false;
+            btnOutside_3_UP.Click += btnOutside_Click;
             // 
             // tableLayoutPanel7
             // 
@@ -348,6 +336,7 @@
             btnOutside_4_DOWN.TabIndex = 1;
             btnOutside_4_DOWN.Text = "▼";
             btnOutside_4_DOWN.UseVisualStyleBackColor = false;
+            btnOutside_4_DOWN.Click += btnOutside_Click;
             // 
             // btnOutside_4_UP
             // 
@@ -362,6 +351,7 @@
             btnOutside_4_UP.TabIndex = 0;
             btnOutside_4_UP.Text = "▲";
             btnOutside_4_UP.UseVisualStyleBackColor = false;
+            btnOutside_4_UP.Click += btnOutside_Click;
             // 
             // tableLayoutPanel9
             // 
@@ -391,6 +381,7 @@
             btnOutside_5_DOWN.TabIndex = 1;
             btnOutside_5_DOWN.Text = "▼";
             btnOutside_5_DOWN.UseVisualStyleBackColor = false;
+            btnOutside_5_DOWN.Click += btnOutside_Click;
             // 
             // btnOutside_5_UP
             // 
@@ -405,6 +396,7 @@
             btnOutside_5_UP.TabIndex = 0;
             btnOutside_5_UP.Text = "▲";
             btnOutside_5_UP.UseVisualStyleBackColor = false;
+            btnOutside_5_UP.Click += btnOutside_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -434,6 +426,7 @@
             btnOutside_6_DOWN.TabIndex = 1;
             btnOutside_6_DOWN.Text = "▼";
             btnOutside_6_DOWN.UseVisualStyleBackColor = false;
+            btnOutside_6_DOWN.Click += btnOutside_Click;
             // 
             // btnOutside_6_UP
             // 
@@ -448,6 +441,7 @@
             btnOutside_6_UP.TabIndex = 0;
             btnOutside_6_UP.Text = "▲";
             btnOutside_6_UP.UseVisualStyleBackColor = false;
+            btnOutside_6_UP.Click += btnOutside_Click;
             // 
             // tableLayoutPanel4
             // 
@@ -477,6 +471,7 @@
             btnOutside_7_DOWN.TabIndex = 1;
             btnOutside_7_DOWN.Text = "▼";
             btnOutside_7_DOWN.UseVisualStyleBackColor = false;
+            btnOutside_7_DOWN.Click += btnOutside_Click;
             // 
             // btnOutside_7_UP
             // 
@@ -491,6 +486,7 @@
             btnOutside_7_UP.TabIndex = 0;
             btnOutside_7_UP.Text = "▲";
             btnOutside_7_UP.UseVisualStyleBackColor = false;
+            btnOutside_7_UP.Click += btnOutside_Click;
             // 
             // tableLayoutPanel6
             // 
@@ -520,6 +516,7 @@
             btnOutside_8_DOWN.TabIndex = 1;
             btnOutside_8_DOWN.Text = "▼";
             btnOutside_8_DOWN.UseVisualStyleBackColor = false;
+            btnOutside_8_DOWN.Click += btnOutside_Click;
             // 
             // btnOutside_8_UP
             // 
@@ -534,6 +531,7 @@
             btnOutside_8_UP.TabIndex = 0;
             btnOutside_8_UP.Text = "▲";
             btnOutside_8_UP.UseVisualStyleBackColor = false;
+            btnOutside_8_UP.Click += btnOutside_Click;
             // 
             // tableLayoutPanel8
             // 
@@ -563,6 +561,7 @@
             btnOutside_9_DOWN.TabIndex = 1;
             btnOutside_9_DOWN.Text = "▼";
             btnOutside_9_DOWN.UseVisualStyleBackColor = false;
+            btnOutside_9_DOWN.Click += btnOutside_Click;
             // 
             // btnOutside_9_UP
             // 
@@ -577,14 +576,14 @@
             btnOutside_9_UP.TabIndex = 0;
             btnOutside_9_UP.Text = "▲";
             btnOutside_9_UP.UseVisualStyleBackColor = false;
+            btnOutside_9_UP.Click += btnOutside_Click;
             // 
             // tableLayoutPanel10
             // 
             tableLayoutPanel10.ColumnCount = 1;
             tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel10.Controls.Add(btnOutside_10_DOWN, 0, 1);
-            tableLayoutPanel10.Controls.Add(btnOutside_10_UP, 0, 0);
-            tableLayoutPanel10.Location = new Point(400, 211);
+            tableLayoutPanel10.Location = new Point(400, 188);
             tableLayoutPanel10.Name = "tableLayoutPanel10";
             tableLayoutPanel10.RowCount = 2;
             tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -606,26 +605,14 @@
             btnOutside_10_DOWN.TabIndex = 1;
             btnOutside_10_DOWN.Text = "▼";
             btnOutside_10_DOWN.UseVisualStyleBackColor = false;
-            // 
-            // btnOutside_10_UP
-            // 
-            btnOutside_10_UP.BackColor = Color.LightGray;
-            btnOutside_10_UP.Dock = DockStyle.Fill;
-            btnOutside_10_UP.FlatAppearance.BorderColor = Color.DarkGray;
-            btnOutside_10_UP.FlatStyle = FlatStyle.Flat;
-            btnOutside_10_UP.Location = new Point(10, 10);
-            btnOutside_10_UP.Margin = new Padding(10, 10, 10, 3);
-            btnOutside_10_UP.Name = "btnOutside_10_UP";
-            btnOutside_10_UP.Size = new Size(37, 35);
-            btnOutside_10_UP.TabIndex = 0;
-            btnOutside_10_UP.Text = "▲";
-            btnOutside_10_UP.UseVisualStyleBackColor = false;
+            btnOutside_10_DOWN.Click += btnOutside_Click;
             // 
             // outside
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(505, 320);
+            Controls.Add(label11);
             Controls.Add(tableLayoutPanel10);
             Controls.Add(tableLayoutPanel8);
             Controls.Add(tableLayoutPanel6);
@@ -635,7 +622,6 @@
             Controls.Add(tableLayoutPanel7);
             Controls.Add(tableLayoutPanel5);
             Controls.Add(tableLayoutPanel3);
-            Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -679,7 +665,6 @@
         private Label label10;
         private Label label11;
         private Button btnOutside_1_UP;
-        private Button btnOutside_1_DOWN;
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnOutside_2_DOWN;
         private Button btnOutside_2_UP;
@@ -706,6 +691,5 @@
         private Button btnOutside_9_UP;
         private TableLayoutPanel tableLayoutPanel10;
         private Button btnOutside_10_DOWN;
-        private Button btnOutside_10_UP;
     }
 }

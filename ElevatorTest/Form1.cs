@@ -57,6 +57,7 @@ namespace ElevatorTest
             thread.Start();
 
             inForm.eventDelbtnInsideClicked += InForm_eventDelbtnInsideClicked;
+            outForm.eventDelbtnOutsideClicked += OutForm_eventDelbtnOutsideClicked;
             elevatorControl.evendDelElevatorDoor += ElevatorControl_evendDelElevatorDoor;
             elevatorControl.evendDelElevatorFloorText += ElevatorControl_evendDelElevatorFloorText;
 
@@ -80,6 +81,7 @@ namespace ElevatorTest
             }
         }
 
+        // 내부 버튼 델리게이트로 받아온 이벤트
         private void InForm_eventDelbtnInsideClicked(object? sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -136,6 +138,116 @@ namespace ElevatorTest
 
             // 내부 버튼누른 층수 전달
             elevatorControl.TransBtnInside(btnFloor);
+        }
+
+        private void OutForm_eventDelbtnOutsideClicked(object? sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            if (btn == null) return;
+
+            int btnFloor = 1;
+            bool up = false;
+            bool down = false;
+
+            switch (btn.Name)
+            {
+                case "btnOutside_1_UP":
+                    btnFloor = 1;
+                    up = true;
+                    break;
+
+                case "btnOutside_2_UP":
+                    btnFloor = 2;
+                    up = true;
+                    break;
+
+                case "btnOutside_3_UP":
+                    btnFloor = 3;
+                    up = true;
+                    break;
+
+                case "btnOutside_4_UP":
+                    btnFloor = 4;
+                    up = true;
+                    break;
+
+                case "btnOutside_5_UP":
+                    btnFloor = 5;
+                    up = true;
+                    break;
+
+                case "btnOutside_6_UP":
+                    btnFloor = 6;
+                    up = true;
+                    break;
+
+                case "btnOutside_7_UP":
+                    btnFloor = 7;
+                    up = true;
+                    break;
+
+                case "btnOutside_8_UP":
+                    btnFloor = 8;
+                    up = true;
+                    break;
+
+                case "btnOutside_9_UP":
+                    btnFloor = 9;
+                    up = true;
+                    break;
+
+                case "btnOutside_2_DOWN":
+                    btnFloor = 2;
+                    down = true;
+                    break;
+
+                case "btnOutside_3_DOWN":
+                    btnFloor = 3;
+                    down = true;
+                    break;
+
+                case "btnOutside_4_DOWN":
+                    btnFloor = 4;
+                    down = true;
+                    break;
+
+                case "btnOutside_5_DOWN":
+                    btnFloor = 5;
+                    down = true;
+                    break;
+
+                case "btnOutside_6_DOWN":
+                    btnFloor = 6;
+                    down = true;
+                    break;
+
+                case "btnOutside_7_DOWN":
+                    btnFloor = 7;
+                    down = true;
+                    break;
+
+                case "btnOutside_8_DOWN":
+                    btnFloor = 8;
+                    down = true;
+                    break;
+
+                case "btnOutside_9_DOWN":
+                    btnFloor = 9;
+                    down = true;
+                    break;
+
+                case "btnOutside_10_DOWN":
+                    btnFloor = 10;
+                    down = true;
+                    break;
+
+                default:
+                    break;
+            }
+
+            // 내부 버튼누른 층수 전달
+            elevatorControl.TransBtnOutside(btnFloor, up, down);
         }
     }
 }
